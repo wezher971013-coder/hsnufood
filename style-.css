@@ -1,0 +1,157 @@
+
+
+
+*{
+    outline: 1px solid rgb(255, 0, 0);
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  
+
+}
+
+h1{
+  margin-left: 20px;
+  
+}
+header{
+  outline: 1px solid rgb(3, 255, 78);
+  background-color: cornflowerblue;
+  width: 100vw;
+  height: 100px;
+  padding: 1px;
+  
+  
+}
+
+
+
+
+#map {
+  width: 66vw;
+  height: 66vh;
+  position: relative;
+  top: 70px;
+  left: 30%;
+  border-radius:10px;
+  margin: 0;
+}
+
+#fl {
+  width:150px;
+  height:50px;
+  margin: 10px;
+  border-radius:10px;
+  color: #f7f7f7;
+  background-color: rgb(84, 84, 216);
+
+
+}
+.button{
+  position: relative;
+  top: 60px;
+  width: 66vw;
+  left: 32%;
+  
+
+}
+
+/*滑鼠碰到按鈕之後的樣式*/
+#fl:hover{
+  width:150px;
+  height:50px;
+  margin: 10px;
+  border-radius:5px;
+  color: rgb(84, 84, 216);
+  background-color: #f7f7f7;
+}
+
+
+/*定位hsnu按鈕*/
+#locate{
+  position: relative;
+  top: 70px;
+  left: 59%;
+  width:150px;
+  height:50px;
+  margin: 10px;
+  border-radius:10px;
+  color: #f7f7f7;
+  background-color: rgb(84, 84, 216);
+}
+
+#locate:hover{
+  position: relative;
+  top: 70px;
+  left: 59%;
+  width:150px;
+  height:50px;
+  margin: 10px;
+  border-radius:10px;
+  color: rgb(84, 84, 216);
+  background-color: #f7f7f7;
+}
+
+body{
+  background-color: antiquewhite;
+  color: white;
+  height: 100vh;
+  /*
+  background: url(HSNU_main_gate_20200919.jpg);
+  backdrop-filter: blur(6px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  */
+
+}
+
+
+#sidebar {
+  border-radius:10px;
+  position: fixed;
+  top: 15vh;
+  left: 3vw;
+  width: 470px;
+  height: 700px;       
+  overflow-y: auto;    
+  background: rgb(255, 255, 255);
+}
+
+.resBox {
+  background-color: rgb(76, 97, 134);
+  position: relative;
+  left: 5px;
+  width: 25vw;
+  height: 200px;
+  top: 5px;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  border-radius:5px;
+  margin: 5px,5px;
+
+}
+
+
+.resBox:hover {
+  position: relative;
+  left: 5px;
+  width: 370px;
+  height: 200px;
+  top: 5px;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  border-radius:5px;
+  box-shadow: 5px 5px 5px #4e8aa7;
+
+}
+
+#restaurantList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
