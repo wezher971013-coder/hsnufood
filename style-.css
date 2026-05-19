@@ -1,157 +1,268 @@
-
-
-
-*{
-    outline: 1px solid rgb(255, 0, 0);
-}
-
-
-
-html, body {
+/* ==========================================================================
+   1. 全域與基礎標籤樣式
+   ========================================================================== */
+body {
   margin: 0;
   padding: 0;
-  
-
-}
-
-h1{
-  margin-left: 20px;
-  
-}
-header{
-  outline: 1px solid rgb(3, 255, 78);
-  background-color: cornflowerblue;
-  width: 100vw;
-  height: 100px;
-  padding: 1px;
-  
-  
-}
-
-
-
-
-#map {
-  width: 66vw;
-  height: 66vh;
-  position: relative;
-  top: 70px;
-  left: 30%;
-  border-radius:10px;
-  margin: 0;
-}
-
-#fl {
-  width:150px;
-  height:50px;
-  margin: 10px;
-  border-radius:10px;
-  color: #f7f7f7;
-  background-color: rgb(84, 84, 216);
-
-
-}
-.button{
-  position: relative;
-  top: 60px;
-  width: 66vw;
-  left: 32%;
-  
-
-}
-
-/*滑鼠碰到按鈕之後的樣式*/
-#fl:hover{
-  width:150px;
-  height:50px;
-  margin: 10px;
-  border-radius:5px;
-  color: rgb(84, 84, 216);
-  background-color: #f7f7f7;
-}
-
-
-/*定位hsnu按鈕*/
-#locate{
-  position: relative;
-  top: 70px;
-  left: 59%;
-  width:150px;
-  height:50px;
-  margin: 10px;
-  border-radius:10px;
-  color: #f7f7f7;
-  background-color: rgb(84, 84, 216);
-}
-
-#locate:hover{
-  position: relative;
-  top: 70px;
-  left: 59%;
-  width:150px;
-  height:50px;
-  margin: 10px;
-  border-radius:10px;
-  color: rgb(84, 84, 216);
-  background-color: #f7f7f7;
-}
-
-body{
+  min-height: 100vh;
   background-color: antiquewhite;
   color: white;
-  height: 100vh;
-  /*
-  background: url(HSNU_main_gate_20200919.jpg);
+  background: url(1777197025050.jpg);
   backdrop-filter: blur(6px);
   background-size: cover;
   background-repeat: no-repeat;
-  */
-
 }
 
+h1 {
+  color: black;
+  margin-left: 20px;
+}
 
+p {
+  font-size: 18px;
+  font-weight: bold;
+  color: orange;
+}
+
+header {
+  background-color: rgb(241, 241, 241);
+  padding: 10px 0.1px; /* 增加上下 padding 確保手機版不易漏出 */
+  height: auto;        /* 取消固定的 12.5vh，讓內容決定高度 */
+  min-height: 12.5vh;
+}
+
+/* ==========================================================================
+   2. 電腦版 (桌機) 預設佈局風格
+   ========================================================================== */
 #sidebar {
-  border-radius:10px;
+  color: black;
+  border-radius: 10px;
   position: fixed;
-  top: 15vh;
-  left: 3vw;
-  width: 470px;
-  height: 700px;       
-  overflow-y: auto;    
-  background: rgb(255, 255, 255);
+  top: 12.5vh;
+  left: 0px;
+  width: 28vw;
+  height: 87.5vh;
+  overflow-y: auto;
+  font-size: 20px;
+  background: rgb(219, 219, 219);
 }
 
-.resBox {
-  background-color: rgb(76, 97, 134);
+#map {
+  width: 67.5vw;
+  height: 66vh;
   position: relative;
-  left: 5px;
-  width: 25vw;
-  height: 200px;
-  top: 5px;
-  border: 1px solid #333;
-  padding: 8px 12px;
-  border-radius:5px;
-  margin: 5px,5px;
-
+  top: 50px;
+  left: 30vw;
+  border-radius: 10px;
+  margin: 0 0 50px 0; /* 增加底部間距 */
 }
 
+.container {
+  padding: 1rem;
+}
 
-.resBox:hover {
+/* 按鈕區塊 */
+.button {
   position: relative;
-  left: 5px;
-  width: 370px;
-  height: 200px;
-  top: 5px;
-  border: 1px solid #333;
-  padding: 8px 12px;
-  border-radius:5px;
-  box-shadow: 5px 5px 5px #4e8aa7;
-
+  width: 65vw;
+  left: 29.55vw;
+  top: 7.5vh;
+  display: flex;
+  flex-wrap: wrap; /* 超出時自動換行 */
+  gap: 10px;
 }
 
+#fl, #locate {
+  margin: 10px;
+  border-radius: 10px;
+  height: 40px; /* 改用 px 避免手機上高度過小 */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#fl {
+  width: 100px; /* 電腦版固定寬度 */
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+}
+
+#locate {
+  width: 90px;
+  color: #f7f7f7;
+  background-color: rgb(110, 110, 110);
+}
+
+#fl:hover, #locate:hover {
+  color: rgb(84, 84, 216);
+  background-color: #f7f7f7;
+}
+
+/* 餐廳列表卡片 */
 #restaurantList {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.resBox {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  left: 5px;
+  width: calc(100% - 25px); /* 改為相對於側邊欄的彈性寬度 */
+  height: auto;              /* 改為 auto 避免文字多時溢出框外 */
+  min-height: 180px;
+  border: 1px solid #000000;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+.resBox:hover {
+  box-shadow: 5px 5px 5px #000000;
+}
+
+/* 下拉選單並排 */
+.drop-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap; /* 小螢幕自動換行 */
+  gap: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.drop, .drop2 {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+}
+
+.drop:hover .dropOption, .drop2:hover .dropOption2,
+.drop:hover .dropdown, .drop2:hover .dropdown2 {
+  display: block;
+}
+
+.drop:hover .dropdown.close, .drop2:hover .dropdown2.close {
+  display: none;
+}
+
+.dropOption, .dropOption2 {
+  position: relative;
+  width: 200px;
+  color: #666;
+  font-size: 18px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.dropOption::after, .dropOption2::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  border-width: 8px 6px;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+}
+
+.dropdown, .dropdown2 {
+  display: none;
+  width: 200px;
+  max-height: 300px;
+  position: absolute;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 3px 0px #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  overflow: auto;
+  z-index: 100; /* 提高層級防止被地圖遮擋 */
+}
+
+.dropdown > li, .dropdown2 > li {
+  display: block;
+  color: #000;
+  padding: 12px;
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.dropdown > li:hover, .dropdown2 > li:hover {
+  background-color: orange;
+  border-radius: 6px;
+}
+
+/* 捲軸樣式 */
+.dropdown::-webkit-scrollbar, .dropdown2::-webkit-scrollbar { width: 10px; }
+.dropdown::-webkit-scrollbar-track, .dropdown2::-webkit-scrollbar-track { background-color: #eee; border-radius: 6px; }
+.dropdown::-webkit-scrollbar-thumb, .dropdown2::-webkit-scrollbar-thumb { background-color: orange; border-radius: 15px; }
+
+/* ==========================================================================
+   3. RWD 響應式媒體查詢 (平板與手機小螢幕斷點：768px 以下)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* 標題置中，縮小邊距 */
+  h1 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  /* 下拉選單改為垂直置中排佈 */
+  .drop-container {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  /* 側邊欄取消 fixed 固定定位，改為一般流動區塊，寬度 100% */
+  #sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    max-height: 50vh; /* 限制手機版列表高度，避免把地圖擠到太下面 */
+    border-radius: 0;
+    font-size: 18px;
+  }
+
+  /* 餐廳卡片在手機版填滿寬度 */
+  .resBox {
+    width: calc(100% - 20px);
+    left: 10px;
+  }
+
+  /* 按鈕區取消相對偏移動作，置中排列 */
+  .button {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  #fl, #locate {
+    width: 40%; /* 按鈕各佔近一半寬度 */
+    max-width: 150px;
+  }
+
+  /* 地圖取消偏移動作，改為寬度 100% 滿版，排在按鈕與側邊欄下方 */
+  #map {
+    width: 92vw;
+    height: 45vh; /* 手機版固定高度，方便單手操作 */
+    left: 4vw;
+    top: 15px;
+    margin-bottom: 40px;
+  }
+}
